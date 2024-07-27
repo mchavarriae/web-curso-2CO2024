@@ -97,20 +97,20 @@ function enablePaging() {
 
 function formatFilm(film) {
   return `
-  <div class="h-72 overflow-hidden bg-gray-100/60" >
+  <div class="h-72 overflow-hidden bg-gray-100/60 hover:bg-gray-100 rounded-lg m-1 dark:bg-gray-600/50  dark:text-white">
      <div class="w-48 flex-none relative">
       <img src="${film.posterUrl}" alt="${film.title}"  class="absolute"/>
     </div>
     <div class="ml-48">
-      <div class="title">${film.title}</div>
-      <div class="info">${film.year}</div>
-      <div class="info">${film.rating}</div>
-      <div class="info">Passed: ${film.passed}</div>
-      <div class="info">Reason: ${film.reason}</div>
-      <div class="info">Budget: $${film.budget.toLocaleString("en-US")}</div>
-      <div class="info">Domestic Gross: $${film.domesticGross.toLocaleString("en-US")}</div>
-      <div class="info">International Gross: $${film.internationalGross.toLocaleString("en-US"  )}</div>
-      <p>${film.overview}</p>
+      <div class="text-xl font-bold font-sans">${film.title}</div>
+      <div><span class="font-bold w-24 inline-block">Year</span>${film.year}</div>
+      <div><span class="font-bold w-24 inline-block">Rating</span>${film.rating}</div>
+      <div><span class="font-bold w-24 inline-block">Passed</span> ${film.passed}</div>
+      <div><span class="font-bold w-24 inline-block">Reason</span>: ${film.reason}</div>
+      <div><span class="font-bold w-24 inline-block">Budget</span>: $${film.budget.toLocaleString("en-US")}</div>
+      <div><span class="font-bold w-24 inline-block">Dom. Gross</span>: $${film.domesticGross.toLocaleString("en-US")}</div>
+      <div><span class="font-bold w-24 inline-block">Int. Gross</span>:$${film.internationalGross.toLocaleString("en-US"  )}</div>
+      <p class="line-clamp-3">${film.overview}</p>
     </div>
   </div>`;
 }
